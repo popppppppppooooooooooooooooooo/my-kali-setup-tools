@@ -9,6 +9,7 @@ read port
 readonly host
 readonly port
 
+sudo su
 
 # find *.h >> command.log 2>&1
 
@@ -18,6 +19,7 @@ echo 'https_proxy = '${host}':'${port}\\n'http_proxy = '${host}':'${port} | tee 
 echo 'proxy=http://'${host}':'${port} | tee -a ~/.curlrc
 echo 'export https_proxy="http://'${host}':'${port}'/"\nexport http_proxy="http://'${host}':'${port}'/"\nexport HTTPS_PROXY="http://'${host}':'${port}'/"\nexport HTTP_PROXY="http://'${host}':'${port}'/"' | tee -a ~/.zshrc
 echo 'export https_proxy="http://'${host}':'${port}'/"\nexport http_proxy="http://'${host}':'${port}'/"\nexport HTTPS_PROXY="http://'${host}':'${port}'/"\nexport HTTP_PROXY="http://'${host}':'${port}'/"' | tee -a ~/.bashrc
+echo 'http_proxy=http://'${host}':'${port}'/' | tee -a /etc/wgetrc
 
 mkdir /etc/systemd/system/docker.service.d
 echo '[Service]\nEnvironment=HTTP_PROXY="http://'${host}':'${port}'/"\nEnvironment=HTTPS_PROXY="http://'${host}':'${port}'/"' | tee -a /etc/systemd/system/docker.service.d/http-proxy.conf
