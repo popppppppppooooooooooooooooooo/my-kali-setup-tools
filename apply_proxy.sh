@@ -27,5 +27,9 @@ echo '[Service]\nEnvironment=HTTP_PROXY="http://'${host}':'${port}'/"\nEnvironme
 mkdir ~/.docker
 echo '{\n  "proxies": {\n    "default": {\n      "httpProxy": "http://'${host}':'${port}'/",\n      "httpsProxy": "http://'${host}':'${port}'/",\n      "noProxy": "127.0.0.0/8"\n    }\n  }\n}' | tee -a ~/.docker/config.json
 
+git config --global http.proxy http://${host}:${port}
+
+
+
 
 echo "finished"
