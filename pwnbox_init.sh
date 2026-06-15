@@ -2,27 +2,30 @@ cd ~
 sudo apt update 
 sudo apt autoremove -y 
 sudo apt clean 
+
 sudo apt install remmina -y 
 sudo apt autoremove -y 
 sudo apt clean 
+
 sudo apt install sliver -y 
 lhost0=$(hostname -I | cut -f1 -d' ') 
-echo "generate -m $lhost0 -N manage" |sudo sliver-server 
+echo "generate -m $lhost0 -N manage" | sliver-server 
 mv manage.exe ~/Documents/manage.exe 
 sudo apt autoremove -y 
 sudo apt clean 
+
 sudo apt install autorecon -y 
 sudo apt autoremove -y 
 sudo apt clean 
-sudo apt full-upgrade -y 
-sudo apt autoremove -y 
-sudo apt clean 
+
 sudo apt install chisel -y 
 sudo apt autoremove -y 
 sudo apt clean 
+
 sudo apt install zaproxy -y 
 sudo apt autoremove -y 
 sudo apt clean 
+
 sudo apt install ligolo-ng -y 
 sudo apt autoremove -y 
 sudo apt clean
@@ -45,7 +48,14 @@ chmod +x Documents/shs
 pipx install uv 
 wget https://github.com/nicocha30/ligolo-ng/releases/download/v0.8.3/ligolo-ng_agent_0.8.3_windows_amd64.zip -O Documents/la.zip 
 unzip Documents/la.zip -d Documents 
-toilet -f mono12 -F metal "Installation is finished" 
+toilet -f mono12 -F metal "Installation is finished"
+
+sudo apt full-upgrade -y 
+sudo apt autoremove -y 
+sudo apt clean
+
 cd Documents
+
+touch !!==INITIALIZATION_COMPLETE==!!
 
 # sudo ./shs 9999
