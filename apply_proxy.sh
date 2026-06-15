@@ -1,15 +1,16 @@
 #!/bin/sh
-sudo su
 
 echo "enter the http proxy server address"
 read host
+readonly host
 
 echo "enter the http proxy server port"
 read port
-
-readonly pass
-readonly host
 readonly port
+
+echo "enter the http proxy server port"
+read pass
+readonly pass
 
 
 # find *.h >> command.log 2>&1
