@@ -9,9 +9,11 @@ read port
 readonly port
 
 echo "enter the http proxy server port"
-read pass
+read -s pass
 readonly pass
 
+echo ""
+echo ""
 
 # find *.h >> command.log 2>&1
 
